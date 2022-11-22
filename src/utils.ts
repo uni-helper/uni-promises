@@ -1,7 +1,4 @@
-export interface SimpleOptions {
-  success?: (result: any) => void;
-  fail?: (error: any) => void;
-}
+import { DownloadFilePromise, RequestPromise, SimpleOptions, UploadFilePromise } from './types';
 
 export function simplePromisify<Options extends SimpleOptions = SimpleOptions>(
   callback: (options: Options) => void,
@@ -20,5 +17,31 @@ export function simplePromisify<Options extends SimpleOptions = SimpleOptions>(
         },
       });
     });
+  };
+}
+
+export function mountTaskMethodToPromise<T = UniApp.GeneralCallbackResult>(
+  task?: UniApp.RequestTask | UniApp.UploadTask | UniApp.DownloadTask,
+  promise?: RequestPromise<T> | DownloadFilePromise<T> | UploadFilePromise<T>,
+) {
+  if (!task || !promise) return;
+  (
+    [
+      'onHeadersReceived',
+      'offHeadersReceived',
+      'onChunkReceived',
+      'offChunkReceived',
+      'onProgressUpdate',
+      'offProgressUpdate',
+    ] as const
+  ).forEach((fn) => {
+    if (fn in task) {
+      // @ts-ignore
+      promise[fn] = task[fn].bind(task);
+    }
+  });
+  promise.abort = () => {
+    task?.abort();
+    return promise;
   };
 }
