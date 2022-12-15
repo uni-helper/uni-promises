@@ -23,6 +23,7 @@ export * from './compressVideo';
 export * from './createBLEConnection';
 export * from './createPushMessage';
 export * from './downloadFile';
+export * from './getApp';
 export * from './getBatteryInfo';
 export * from './getBLEDeviceCharacteristics';
 export * from './getBLEDeviceRSSI';
