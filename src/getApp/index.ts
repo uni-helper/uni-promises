@@ -1,5 +1,5 @@
 const _getApp = () =>
-  new Promise((resolve, reject) => {
+  new Promise<ReturnType<typeof getApp>>((resolve, reject) => {
     try {
       const app = getApp();
       resolve(app);
