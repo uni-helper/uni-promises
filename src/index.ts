@@ -21,6 +21,7 @@ export * from './closePreviewImage';
 export * from './compressImage';
 export * from './compressVideo';
 export * from './createBLEConnection';
+export * from './createCameraContext';
 export * from './createCanvasContext';
 export * from './createInnerAudioContext';
 export * from './createLivePlayerContext';
