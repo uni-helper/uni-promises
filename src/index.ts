@@ -28,6 +28,7 @@ export * from './createLivePlayerContext';
 export * from './createLivePusherContext';
 export * from './createMediaContainer';
 export * from './createPushMessage';
+export * from './createVideoContext';
 export * from './downloadFile';
 export * from './getApp';
 export * from './getBackgroundAudioManager';

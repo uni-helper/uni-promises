@@ -45,5 +45,4 @@ cnpm install @uni-helper/uni-promises
 - [SelectorQuery](https://uniapp.dcloud.net.cn/api/ui/nodes-info.html)
 - [WebSocket](https://uniapp.dcloud.net.cn/api/request/websocket.html)
 - [MapContext](https://uniapp.dcloud.net.cn/api/location/map.html)
-- [VideoContext](https://uniapp.dcloud.net.cn/api/media/video-context.html)
 - [EditorContext](https://uniapp.dcloud.net.cn/api/media/editor-context.html)
