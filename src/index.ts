@@ -16,6 +16,7 @@ export * from './chooseMessageFile';
 export * from './chooseVideo';
 export * from './clearStorage';
 export * from './closeBLEConnection';
+export * from './createInnerAudioContext';
 export * from './closeBluetoothAdapter';
 export * from './closePreviewImage';
 export * from './compressImage';
