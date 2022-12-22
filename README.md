@@ -50,4 +50,3 @@ cnpm install @uni-helper/uni-promises
 - [LivePlayerContext](https://uniapp.dcloud.net.cn/api/media/live-player-context.html#createliveplayercontext)
 - [LivePusherContext](https://uniapp.dcloud.net.cn/api/media/live-player-context.html#createlivepushercontext)
 - [EditorContext](https://uniapp.dcloud.net.cn/api/media/editor-context.html)
-- [MediaContainer](https://uniapp.dcloud.net.cn/api/media/media-container.html)
