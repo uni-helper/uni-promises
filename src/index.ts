@@ -40,6 +40,7 @@ export * from './getLocation';
 export * from './getNetworkType';
 export * from './getProvider';
 export * from './getPushClientId';
+export * from './getRecordManager';
 export * from './getSavedFileInfo';
 export * from './getSavedFileList';
 export * from './getScreenBrightness';
