@@ -23,6 +23,7 @@ export * from './compressVideo';
 export * from './createBLEConnection';
 export * from './createCanvasContext';
 export * from './createInnerAudioContext';
+export * from './createLivePusherContext';
 export * from './createMediaContainer';
 export * from './createPushMessage';
 export * from './downloadFile';

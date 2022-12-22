@@ -48,5 +48,4 @@ cnpm install @uni-helper/uni-promises
 - [VideoContext](https://uniapp.dcloud.net.cn/api/media/video-context.html)
 - [CameraContext](https://uniapp.dcloud.net.cn/api/media/camera-context.html)
 - [LivePlayerContext](https://uniapp.dcloud.net.cn/api/media/live-player-context.html#createliveplayercontext)
-- [LivePusherContext](https://uniapp.dcloud.net.cn/api/media/live-player-context.html#createlivepushercontext)
 - [EditorContext](https://uniapp.dcloud.net.cn/api/media/editor-context.html)
