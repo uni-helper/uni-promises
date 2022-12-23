@@ -1,27 +1,32 @@
 import { mountTaskMethodToPromise } from 'src/utils';
 import { RequestPromise } from '../types';
 
+/**
+ * 发起网络请求
+ *
+ * 文档 http://uniapp.dcloud.io/api/request/request?id=request
+ */
 export function request<T = UniApp.RequestSuccessCallbackResult>(
   urlOrOptions: string | UniApp.RequestOptions,
   options?: UniApp.RequestOptions,
 ) {
-  const opt =
+  const _options =
     typeof urlOrOptions === 'string'
       ? { ...options, url: urlOrOptions }
       : { ...urlOrOptions, options };
-  const { success: optSuccess, fail: optFail } = opt;
+  const { success, fail } = _options;
 
   let task: UniApp.RequestTask | undefined = undefined;
   const promise: RequestPromise<T> = new Promise((resolve, reject) => {
-    opt.success = (r) => {
-      if (optSuccess) optSuccess(r);
+    _options.success = (r) => {
+      success?.(r);
       resolve(r);
     };
-    opt.fail = (e) => {
-      if (optFail) optFail(e);
+    _options.fail = (e) => {
+      fail?.(e);
       reject(e);
     };
-    task = uni.request(opt);
+    task = uni.request(_options);
   }) as unknown as RequestPromise<T>;
 
   mountTaskMethodToPromise<T>(task, promise);
