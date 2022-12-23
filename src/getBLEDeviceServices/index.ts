@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const getBLEDeviceServices = simplePromisify(uni.getBLEDeviceServices);
+export const getBLEDeviceServices = promisify(uni.getBLEDeviceServices);

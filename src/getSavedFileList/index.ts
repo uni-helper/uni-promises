@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const getSavedFileList = simplePromisify(uni.getSavedFileList);
+export const getSavedFileList = promisify(uni.getSavedFileList);

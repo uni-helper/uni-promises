@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const setTabBarBadge = simplePromisify(uni.setTabBarBadge);
+export const setTabBarBadge = promisify(uni.setTabBarBadge);

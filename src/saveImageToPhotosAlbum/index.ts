@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const saveImageToPhotosAlbum = simplePromisify(uni.saveImageToPhotosAlbum);
+export const saveImageToPhotosAlbum = promisify(uni.saveImageToPhotosAlbum);

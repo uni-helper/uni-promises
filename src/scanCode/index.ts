@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const scanCode = simplePromisify(uni.scanCode);
+export const scanCode = promisify(uni.scanCode);

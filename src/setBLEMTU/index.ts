@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const setBLEMTU = simplePromisify(uni.setBLEMTU);
+export const setBLEMTU = promisify(uni.setBLEMTU);

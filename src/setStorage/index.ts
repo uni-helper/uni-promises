@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const setStorage = simplePromisify(uni.setStorage);
+export const setStorage = promisify(uni.setStorage);

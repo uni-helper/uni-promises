@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const closePreviewImage = simplePromisify(uni.closePreviewImage);
+export const closePreviewImage = promisify(uni.closePreviewImage);

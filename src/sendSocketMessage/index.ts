@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const sendSocketMessage = () => simplePromisify(uni.sendSocketMessage);
+export const sendSocketMessage = () => promisify(uni.sendSocketMessage);

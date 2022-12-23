@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const hideHomeButton = simplePromisify(uni.hideHomeButton);
+export const hideHomeButton = promisify(uni.hideHomeButton);

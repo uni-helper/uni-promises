@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const stopBluetoothDevicesDiscovery = simplePromisify(uni.stopBluetoothDevicesDiscovery);
+export const stopBluetoothDevicesDiscovery = promisify(uni.stopBluetoothDevicesDiscovery);

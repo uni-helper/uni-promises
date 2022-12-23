@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const startSoterAuthentication = simplePromisify(uni.startSoterAuthentication);
+export const startSoterAuthentication = promisify(uni.startSoterAuthentication);

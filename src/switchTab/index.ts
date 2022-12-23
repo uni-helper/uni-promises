@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const switchTab = simplePromisify(uni.switchTab);
+export const switchTab = promisify(uni.switchTab);

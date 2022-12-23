@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const chooseVideo = simplePromisify(uni.chooseVideo);
+export const chooseVideo = promisify(uni.chooseVideo);

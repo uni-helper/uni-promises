@@ -1,4 +1,4 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
 export interface MapContext extends UniApp.MapContext {
   getCenterLocation(
@@ -65,25 +65,25 @@ export const createMapContext = (mapId: string, componentInstance?: any) => {
   return new Promise<MapContext>((resolve, reject) => {
     try {
       const context: any = uni.createMapContext(mapId, componentInstance);
-      context.getCenterLocation = simplePromisify(context.getCenterLocation.bind(context));
-      context.moveToLocation = simplePromisify(context.moveToLocation.bind(context));
-      context.translateMarker = simplePromisify(context.translateMarker.bind(context));
-      context.includePoints = simplePromisify(context.includePoints.bind(context));
-      context.getRegion = simplePromisify(context.getRegion.bind(context));
-      context.getScale = simplePromisify(context.getScale.bind(context));
-      context.addCustomLayer = simplePromisify(context.addCustomLayer.bind(context));
-      context.addGroundOverlay = simplePromisify(context.addGroundOverlay.bind(context));
-      context.addMarkers = simplePromisify(context.addMarkers.bind(context));
-      context.fromScreenLocation = simplePromisify(context.fromScreenLocation.bind(context));
-      context.initMarkerCluster = simplePromisify(context.initMarkerCluster.bind(context));
-      context.moveAlong = simplePromisify(context.moveAlong.bind(context));
-      context.openMapApp = simplePromisify(context.openMapApp.bind(context));
-      context.removeCustomLayer = simplePromisify(context.removeCustomLayer.bind(context));
-      context.removeGroundOverlay = simplePromisify(context.removeGroundOverlay.bind(context));
-      context.removeMarkers = simplePromisify(context.removeMarkers.bind(context));
-      context.setCenterOffset = simplePromisify(context.setCenterOffset.bind(context));
-      context.toScreenLocation = simplePromisify(context.toScreenLocation.bind(context));
-      context.updateGroundOverlay = simplePromisify(context.updateGroundOverlay.bind(context));
+      context.getCenterLocation = promisify(context.getCenterLocation.bind(context));
+      context.moveToLocation = promisify(context.moveToLocation.bind(context));
+      context.translateMarker = promisify(context.translateMarker.bind(context));
+      context.includePoints = promisify(context.includePoints.bind(context));
+      context.getRegion = promisify(context.getRegion.bind(context));
+      context.getScale = promisify(context.getScale.bind(context));
+      context.addCustomLayer = promisify(context.addCustomLayer.bind(context));
+      context.addGroundOverlay = promisify(context.addGroundOverlay.bind(context));
+      context.addMarkers = promisify(context.addMarkers.bind(context));
+      context.fromScreenLocation = promisify(context.fromScreenLocation.bind(context));
+      context.initMarkerCluster = promisify(context.initMarkerCluster.bind(context));
+      context.moveAlong = promisify(context.moveAlong.bind(context));
+      context.openMapApp = promisify(context.openMapApp.bind(context));
+      context.removeCustomLayer = promisify(context.removeCustomLayer.bind(context));
+      context.removeGroundOverlay = promisify(context.removeGroundOverlay.bind(context));
+      context.removeMarkers = promisify(context.removeMarkers.bind(context));
+      context.setCenterOffset = promisify(context.setCenterOffset.bind(context));
+      context.toScreenLocation = promisify(context.toScreenLocation.bind(context));
+      context.updateGroundOverlay = promisify(context.updateGroundOverlay.bind(context));
       resolve(context);
     } catch (error) {
       reject(error);

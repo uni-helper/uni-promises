@@ -1,6 +1,6 @@
 import { DownloadFilePromise, RequestPromise, SimpleOptions, UploadFilePromise } from './types';
 
-export function simplePromisify<Options extends SimpleOptions = SimpleOptions>(
+export function promisify<Options extends SimpleOptions = SimpleOptions>(
   callback: (options: Options) => void,
 ) {
   return function (options: Options) {

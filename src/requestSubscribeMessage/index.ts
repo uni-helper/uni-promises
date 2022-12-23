@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const requestSubscribeMessage = simplePromisify(uni.requestSubscribeMessage);
+export const requestSubscribeMessage = promisify(uni.requestSubscribeMessage);

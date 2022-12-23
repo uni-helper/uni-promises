@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const getPushClientId = simplePromisify(uni.getPushClientId);
+export const getPushClientId = promisify(uni.getPushClientId);

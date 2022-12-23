@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const readBLECharacteristicValue = simplePromisify(uni.readBLECharacteristicValue);
+export const readBLECharacteristicValue = promisify(uni.readBLECharacteristicValue);

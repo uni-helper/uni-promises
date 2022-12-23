@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const vibrateShort = simplePromisify(uni.vibrateShort);
+export const vibrateShort = promisify(uni.vibrateShort);

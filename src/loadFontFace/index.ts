@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const loadFontFace = simplePromisify(uni.loadFontFace);
+export const loadFontFace = promisify(uni.loadFontFace);

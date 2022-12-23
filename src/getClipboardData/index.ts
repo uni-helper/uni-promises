@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const getClipboardData = simplePromisify(uni.getClipboardData);
+export const getClipboardData = promisify(uni.getClipboardData);

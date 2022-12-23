@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const setEnableDebug = simplePromisify(uni.setEnableDebug);
+export const setEnableDebug = promisify(uni.setEnableDebug);

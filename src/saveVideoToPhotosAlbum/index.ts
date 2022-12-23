@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const saveVideoToPhotosAlbum = simplePromisify(uni.saveVideoToPhotosAlbum);
+export const saveVideoToPhotosAlbum = promisify(uni.saveVideoToPhotosAlbum);

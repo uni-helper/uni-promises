@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const getSelectedTextRange = simplePromisify(uni.getSelectedTextRange);
+export const getSelectedTextRange = promisify(uni.getSelectedTextRange);

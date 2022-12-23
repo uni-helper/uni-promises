@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const setScreenBrightness = simplePromisify(uni.setScreenBrightness);
+export const setScreenBrightness = promisify(uni.setScreenBrightness);

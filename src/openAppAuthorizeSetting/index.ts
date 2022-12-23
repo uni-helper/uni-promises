@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const openAppAuthorizeSetting = simplePromisify(uni.openAppAuthorizeSetting);
+export const openAppAuthorizeSetting = promisify(uni.openAppAuthorizeSetting);

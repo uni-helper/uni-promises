@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const setBackgroundTextStyle = simplePromisify(uni.setBackgroundTextStyle);
+export const setBackgroundTextStyle = promisify(uni.setBackgroundTextStyle);

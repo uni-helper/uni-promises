@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const checkIsSoterEnrolledInDevice = simplePromisify(uni.checkIsSoterEnrolledInDevice);
+export const checkIsSoterEnrolledInDevice = promisify(uni.checkIsSoterEnrolledInDevice);

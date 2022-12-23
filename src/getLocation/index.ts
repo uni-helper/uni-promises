@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const getLocation = simplePromisify(uni.getLocation);
+export const getLocation = promisify(uni.getLocation);

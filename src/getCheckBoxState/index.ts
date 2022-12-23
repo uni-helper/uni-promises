@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const getCheckBoxState = simplePromisify(uni.getCheckBoxState);
+export const getCheckBoxState = promisify(uni.getCheckBoxState);

@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const makePhoneCall = simplePromisify(uni.makePhoneCall);
+export const makePhoneCall = promisify(uni.makePhoneCall);

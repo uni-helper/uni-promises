@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const shareWithSystem = simplePromisify(uni.shareWithSystem);
+export const shareWithSystem = promisify(uni.shareWithSystem);

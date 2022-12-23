@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const navigateBack = simplePromisify(uni.navigateBack);
+export const navigateBack = promisify(uni.navigateBack);

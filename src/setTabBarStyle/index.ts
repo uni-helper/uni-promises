@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const setTabBarStyle = simplePromisify(uni.setTabBarStyle);
+export const setTabBarStyle = promisify(uni.setTabBarStyle);

@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const setKeepScreenOn = simplePromisify(uni.setKeepScreenOn);
+export const setKeepScreenOn = promisify(uni.setKeepScreenOn);

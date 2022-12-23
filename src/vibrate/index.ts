@@ -1,4 +1,4 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
 // @ts-expect-error
-export const vibrate = simplePromisify(uni.vibrate);
+export const vibrate = promisify(uni.vibrate);

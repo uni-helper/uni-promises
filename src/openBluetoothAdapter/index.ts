@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const openBluetoothAdapter = simplePromisify(uni.openBluetoothAdapter);
+export const openBluetoothAdapter = promisify(uni.openBluetoothAdapter);

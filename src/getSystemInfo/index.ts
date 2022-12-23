@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const getSystemInfo = simplePromisify(uni.getSystemInfo);
+export const getSystemInfo = promisify(uni.getSystemInfo);

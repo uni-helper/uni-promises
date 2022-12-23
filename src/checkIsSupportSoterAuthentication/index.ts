@@ -1,5 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const checkIsSupportSoterAuthentication = simplePromisify(
-  uni.checkIsSupportSoterAuthentication,
-);
+export const checkIsSupportSoterAuthentication = promisify(uni.checkIsSupportSoterAuthentication);

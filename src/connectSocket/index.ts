@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const connectSocket = () => simplePromisify(uni.connectSocket);
+export const connectSocket = () => promisify(uni.connectSocket);

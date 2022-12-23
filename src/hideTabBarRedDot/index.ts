@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const hideTabBarRedDot = simplePromisify(uni.hideTabBarRedDot);
+export const hideTabBarRedDot = promisify(uni.hideTabBarRedDot);

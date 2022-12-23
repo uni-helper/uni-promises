@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const createBLEConnection = simplePromisify(uni.createBLEConnection);
+export const createBLEConnection = promisify(uni.createBLEConnection);

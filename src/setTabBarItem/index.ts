@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const setTabBarItem = simplePromisify(uni.setTabBarItem);
+export const setTabBarItem = promisify(uni.setTabBarItem);

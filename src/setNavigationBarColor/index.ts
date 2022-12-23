@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const setNavigationBarColor = simplePromisify(uni.setNavigationBarColor);
+export const setNavigationBarColor = promisify(uni.setNavigationBarColor);

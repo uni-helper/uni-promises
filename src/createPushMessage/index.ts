@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const createPushMessage = simplePromisify(uni.createPushMessage);
+export const createPushMessage = promisify(uni.createPushMessage);

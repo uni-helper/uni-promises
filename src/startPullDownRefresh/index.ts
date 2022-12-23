@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const startPullDownRefresh = simplePromisify(uni.startPullDownRefresh);
+export const startPullDownRefresh = promisify(uni.startPullDownRefresh);

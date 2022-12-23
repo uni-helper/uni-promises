@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const getNetworkType = simplePromisify(uni.getNetworkType);
+export const getNetworkType = promisify(uni.getNetworkType);

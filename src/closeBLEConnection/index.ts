@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const closeBLEConnection = simplePromisify(uni.closeBLEConnection);
+export const closeBLEConnection = promisify(uni.closeBLEConnection);

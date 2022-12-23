@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const showToast = simplePromisify(uni.showToast);
+export const showToast = promisify(uni.showToast);

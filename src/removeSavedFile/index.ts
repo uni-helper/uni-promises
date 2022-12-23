@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const removeSavedFile = simplePromisify(uni.removeSavedFile);
+export const removeSavedFile = promisify(uni.removeSavedFile);

@@ -1,5 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const notifyBLECharacteristicValueChange = simplePromisify(
-  uni.notifyBLECharacteristicValueChange,
-);
+export const notifyBLECharacteristicValueChange = promisify(uni.notifyBLECharacteristicValueChange);

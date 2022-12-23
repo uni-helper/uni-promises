@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const getExtConfig = simplePromisify(uni.getExtConfig);
+export const getExtConfig = promisify(uni.getExtConfig);

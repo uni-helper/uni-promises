@@ -1,3 +1,3 @@
-import { simplePromisify } from '../utils';
+import { promisify } from '../utils';
 
-export const setNavigationBarTitle = simplePromisify(uni.setNavigationBarTitle);
+export const setNavigationBarTitle = promisify(uni.setNavigationBarTitle);
