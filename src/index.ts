@@ -26,6 +26,7 @@ export * from './createCanvasContext';
 export * from './createInnerAudioContext';
 export * from './createLivePlayerContext';
 export * from './createLivePusherContext';
+export * from './createMapContext';
 export * from './createMediaContainer';
 export * from './createPushMessage';
 export * from './createVideoContext';
