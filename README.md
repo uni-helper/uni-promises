@@ -4,8 +4,6 @@
 
 [![npm](https://img.shields.io/npm/v/@uni-helper/uni-promises)](https://www.npmjs.com/package/@uni-helper/uni-promises)
 
-**WIP**
-
 `uni-app` promise 化的 API。
 
 ## 起步
@@ -38,8 +36,6 @@ pnpm install @uni-helper/uni-promises
 cnpm install @uni-helper/uni-promises
 ```
 
-## API
+## 致谢
 
-大部分 API 都已经提供了 promise 化。目前还需要关注以下 API。
-
-- [WebSocket](https://uniapp.dcloud.net.cn/api/request/websocket.html)
+- [taro](https://github.com/nervjs/taro)
