@@ -29,6 +29,7 @@ export * from './createLivePusherContext';
 export * from './createMapContext';
 export * from './createMediaContainer';
 export * from './createPushMessage';
+export * from './createSelectorQuery';
 export * from './createVideoContext';
 export * from './downloadFile';
 export * from './getApp';

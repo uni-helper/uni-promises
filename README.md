@@ -42,5 +42,4 @@ cnpm install @uni-helper/uni-promises
 
 大部分 API 都已经提供了 promise 化。目前还需要关注以下 API。
 
-- [SelectorQuery](https://uniapp.dcloud.net.cn/api/ui/nodes-info.html)
 - [WebSocket](https://uniapp.dcloud.net.cn/api/request/websocket.html)
