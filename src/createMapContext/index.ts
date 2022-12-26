@@ -16,8 +16,7 @@ export interface MapContext extends UniApp.MapContext {
   /** 缩放视野展示所有经纬度 */
   includePoints(
     options: UniApp.MapContextIncludePointsOptions,
-    // ): Promise<Parameters<NonNullable<UniApp.MapContextIncludePointsOptions['success']>>[0]>;
-  ): Promise<any>;
+  ): Promise<Parameters<NonNullable<UniApp.MapContextIncludePointsOptions['success']>>[0]>;
   /** 获取当前地图的视野范围 */
   getRegion(
     options: UniApp.MapContextGetRegionOptions,
