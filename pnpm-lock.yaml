@@ -6,7 +6,7 @@ specifiers:
   '@commitlint/cli': ^17.3.0
   '@commitlint/config-conventional': ^17.3.0
   '@commitlint/prompt': ^17.3.0
-  '@dcloudio/types': ^3.2.5
+  '@dcloudio/types': ^3.2.6
   '@modyqyw/fabric': ^5.14.0
   '@tsconfig/node18': ^1.0.1
   '@types/node': ^18.11.17
@@ -28,7 +28,7 @@ specifiers:
   vue: ^3.2.45
 
 dependencies:
-  '@dcloudio/types': 3.2.5
+  '@dcloudio/types': 3.2.6
 
 devDependencies:
   '@babel/core': 7.20.7
@@ -531,8 +531,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@dcloudio/types/3.2.5:
-    resolution: {integrity: sha512-KsvmkFx1fVTXcikGA+v6KKJmLViA6d7K54P4vomtIt8P6L3amIP3yK2YjfMrXTXAzqePVYA9HwNUZc7myO3Clg==}
+  /@dcloudio/types/3.2.6:
+    resolution: {integrity: sha512-9qQuAL0lE2utnxCWpEN6/xzTIDVsvp2M35iTNE4tcR0fBC3mvaO+0tcet5nUKU0ahb9Au6Vx4v+FpNC2zUR6Ig==}
     dev: false
 
   /@esbuild-kit/cjs-loader/2.4.1:

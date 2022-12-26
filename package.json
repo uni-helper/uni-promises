@@ -51,7 +51,7 @@
     "prepare": "is-ci || husky install"
   },
   "dependencies": {
-    "@dcloudio/types": "^3.2.5"
+    "@dcloudio/types": "^3.2.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
