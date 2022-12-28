@@ -24,17 +24,9 @@ npm install @uni-helper/uni-promises
 yarn install @uni-helper/uni-promises
 ```
 
-使用 `pnpm`：
+`uni-app` 和 `pnpm` 结合使用存在问题，不建议使用 `pnpm` 安装依赖。
 
-```shell
-pnpm install @uni-helper/uni-promises
-```
-
-使用 `cnpm`：
-
-```shell
-cnpm install @uni-helper/uni-promises
-```
+不考虑支持 `uni_modules`。
 
 ## API
 
