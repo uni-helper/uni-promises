@@ -4,7 +4,7 @@
 
 [![npm](https://img.shields.io/npm/v/@uni-helper/uni-promises)](https://www.npmjs.com/package/@uni-helper/uni-promises)
 
-`uni-app` promise 化的 API。
+`uni-app` promise 化的 API。要求 `node >= 14.18`。
 
 ## 起步
 
