@@ -1,4 +1,4 @@
-import { mountTaskMethodToPromise } from 'src/utils';
+import { mountTaskMethodToPromise } from '../utils';
 import { UploadFilePromise } from '../types';
 
 /**
