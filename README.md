@@ -18,10 +18,10 @@
 npm install @uni-helper/uni-promises
 ```
 
-使用 `yarn`：
+使用 `yarn v1`：
 
 ```shell
-yarn install @uni-helper/uni-promises
+yarn add @uni-helper/uni-promises
 ```
 
 `uni-app` 和 `pnpm` 结合使用存在问题，不建议使用 `pnpm` 安装依赖。
