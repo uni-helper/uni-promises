@@ -164,9 +164,13 @@ yarn add @uni-helper/uni-promises
 - [vibrateShort](./src/vibrateShort/index.ts)
 - [writeBLECharacteristicValue](./src/writeBLECharacteristicValue/index.ts)
 
-## 关联 ISSUE
+## 延伸
 
-如果你觉得这个库有用，你可以到 [这个 ISSUE](https://github.com/dcloudio/uni-app/issues/4084) 投票，鼓励官方引入支持。
+<del>如果你觉得这个库有用，你可以到 [这个 ISSUE](https://github.com/dcloudio/uni-app/issues/4084) 投票，鼓励官方引入支持。</del>
+
+尽管 `@dcloudio/types@3.3.0` 开始提供基于 Promise 的类型定义，但它不能正确地同时支持 Vue 2 和 Vue 3，需要手动适配。而这个库基于回调方法封装 Promise，能正确地同时支持 Vue 2 和 Vue 3。
+
+在官方提供的类型定义不能覆盖这个库之前，这个库依旧保持维护。
 
 ## 致谢
 
