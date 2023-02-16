@@ -16,7 +16,7 @@ export function uploadFile<T = UniApp.UploadFileSuccessCallbackResult>(
       : { ...urlOrOptions, options };
   const { success, fail } = _options;
 
-  let task: UniApp.UploadTask | undefined = undefined;
+  let task: UniApp.UploadTask | undefined;
   const promise: UploadFilePromise<T> = new Promise((resolve, reject) => {
     _options.success = (r) => {
       success?.(r);

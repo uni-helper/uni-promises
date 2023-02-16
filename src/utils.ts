@@ -25,21 +25,19 @@ export function mountTaskMethodToPromise<T = UniApp.GeneralCallbackResult>(
   promise?: RequestPromise<T> | DownloadFilePromise<T> | UploadFilePromise<T>,
 ) {
   if (!task || !promise) return;
-  (
-    [
-      'onHeadersReceived',
-      'offHeadersReceived',
-      'onChunkReceived',
-      'offChunkReceived',
-      'onProgressUpdate',
-      'offProgressUpdate',
-    ] as const
-  ).forEach((fn) => {
+  for (const fn of [
+    'onHeadersReceived',
+    'offHeadersReceived',
+    'onChunkReceived',
+    'offChunkReceived',
+    'onProgressUpdate',
+    'offProgressUpdate',
+  ] as const) {
     if (fn in task) {
-      // @ts-ignore
+      // @ts-expect-error no types
       promise[fn] = task[fn].bind(task);
     }
-  });
+  }
   promise.abort = () => {
     task?.abort();
     return promise;

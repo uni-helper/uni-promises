@@ -16,7 +16,7 @@ export function request<T = UniApp.RequestSuccessCallbackResult>(
       : { ...urlOrOptions, options };
   const { success, fail } = _options;
 
-  let task: UniApp.RequestTask | undefined = undefined;
+  let task: UniApp.RequestTask | undefined;
   const promise: RequestPromise<T> = new Promise((resolve, reject) => {
     _options.success = (r) => {
       success?.(r);

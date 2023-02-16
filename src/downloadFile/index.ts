@@ -16,7 +16,7 @@ export function downloadFile<T = UniApp.DownloadSuccessData>(
       : { ...urlOrOptions, options };
   const { success, fail } = _options;
 
-  let task: UniApp.DownloadTask | undefined = undefined;
+  let task: UniApp.DownloadTask | undefined;
   const promise: DownloadFilePromise<T> = new Promise((resolve, reject) => {
     _options.success = (r) => {
       success?.(r);
