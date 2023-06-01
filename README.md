@@ -12,19 +12,19 @@
 
 安装依赖。
 
-使用 `npm`：
-
 ```shell
 npm install @uni-helper/uni-promises
 ```
 
-使用 `yarn v1`：
+<details>
+  <summary>yarn v2/v3</summary>
+  <p>请参考 <a href="https://yarnpkg.com/configuration/yarnrc/#nodeLinker">文档</a> 设置 <code>nodeLinker</code> 为 <code>node_modules</code>。</p>
+</details>
 
-```shell
-yarn add @uni-helper/uni-promises
-```
-
-`uni-app` 和 `pnpm` 结合使用存在问题，不建议使用 `pnpm` 安装依赖。
+<details>
+  <summary>pnpm</summary>
+  <p>请参考 <a href="https://pnpm.io/npmrc#shamefully-hoist">文档</a> 设置 <code>shamefully-hoist</code> 为 <code>true</code>。</p>
+</details>
 
 不考虑支持 `uni_modules`。
 
