@@ -1,5 +1,8 @@
 import { DownloadFilePromise, RequestPromise, SimpleOptions, UploadFilePromise } from './types';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+export function noop() {}
+
 export function promisify<Options extends SimpleOptions = SimpleOptions>(
   callback: (options: Options) => void,
 ) {
