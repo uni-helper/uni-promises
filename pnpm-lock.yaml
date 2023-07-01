@@ -25,8 +25,8 @@ importers:
         specifier: ^8.3.1
         version: 8.3.1(eslint@8.43.0)(postcss@8.4.24)(prettier@2.8.8)(stylelint@15.8.0)(svelte@3.59.2)(ts-node@10.9.1)(vue@3.3.4)
       '@tsconfig/node18':
-        specifier: ^2.0.1
-        version: 2.0.1
+        specifier: ^18.0.0
+        version: 18.2.0
       '@types/node':
         specifier: ^18.16.18
         version: 18.16.18
@@ -2583,8 +2583,8 @@ packages:
   /@tsconfig/node16@1.0.3:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
 
-  /@tsconfig/node18@2.0.1:
-    resolution: {integrity: sha512-UqdfvuJK0SArA2CxhKWwwAWfnVSXiYe63bVpMutc27vpngCntGUZQETO24pEJ46zU6XM+7SpqYoMgcO3bM11Ew==}
+  /@tsconfig/node18@18.2.0:
+    resolution: {integrity: sha512-yhxwIlFVSVcMym3O31HoMnRXpoenmpIxcj4Yoes2DUpe+xCJnA7ECQP1Vw889V0jTt/2nzvpLQ/UuMYCd3JPIg==}
     dev: true
 
   /@tufjs/canonical-json@1.0.0:
