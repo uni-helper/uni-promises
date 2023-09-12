@@ -3,23 +3,25 @@ import { DownloadFilePromise, RequestPromise, SimpleOptions, UploadFilePromise }
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 export function noop() {}
 
-export function promisify<Options extends SimpleOptions = SimpleOptions>(
-  callback: (options: Options) => void,
-) {
-  return function (options: Options) {
-    return new Promise<Parameters<NonNullable<Options['success']>>[0]>((resolve, reject) => {
-      callback({
-        ...options,
-        success: (result) => {
-          options?.success?.(result);
-          resolve(result);
-        },
-        fail: (error) => {
-          options?.fail?.(error);
-          reject(error);
-        },
-      });
-    });
+export function promisify<F extends (...args: any) => void>(callback: F) {
+  return (...args: Parameters<typeof callback>) => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    const [options = { fail() {}, success() {} }] = args as Array<SimpleOptions | undefined>;
+    return new Promise<Parameters<NonNullable<(typeof options)['success']>>[0]>(
+      (resolve, reject) => {
+        callback({
+          ...options,
+          success: (result: any) => {
+            options?.success?.(result);
+            resolve(result);
+          },
+          fail: (error: any) => {
+            options?.fail?.(error);
+            reject(error);
+          },
+        });
+      },
+    );
   };
 }
 
