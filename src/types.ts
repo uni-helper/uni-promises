@@ -1,8 +1,3 @@
-export interface SimpleOptions {
-  success?: (result: any) => void;
-  fail?: (error: any) => void;
-}
-
 export interface TaskPromise<T = UniApp.GeneralCallbackResult> extends Promise<T> {
   abort: () => void;
   onHeadersReceived: (callback: (result: { header: Record<string, any> }) => void) => void;

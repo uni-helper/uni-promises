@@ -1,13 +1,12 @@
-import { DownloadFilePromise, RequestPromise, SimpleOptions, UploadFilePromise } from './types';
+import { DownloadFilePromise, RequestPromise, UploadFilePromise } from './types';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 export function noop() {}
 
 export function promisify<F extends (...args: any) => void>(callback: F) {
-  return (...args: Parameters<typeof callback>) => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const [options = { fail() {}, success() {} }] = args as Array<SimpleOptions | undefined>;
-    return new Promise<Parameters<NonNullable<(typeof options)['success']>>[0]>(
+  return (...args: Parameters<F>) => {
+    type Options = Parameters<F>[0];
+    const options = args[0] as Options;
+    return new Promise<Parameters<NonNullable<NonNullable<Options>['success']>>[0]>(
       (resolve, reject) => {
         callback({
           ...options,
