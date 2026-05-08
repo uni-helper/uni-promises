@@ -5,6 +5,6 @@ import { promisify } from '../utils';
  *
  * 仅支持H5
  *
- * 文档 http://uniapp.dcloud.io/api/media/file?id=chooseFile
+ * 文档 http://uniapp.dcloud.net.cn/api/media/file?id=chooseFile
  */
 export const chooseFile = promisify(uni.chooseFile);

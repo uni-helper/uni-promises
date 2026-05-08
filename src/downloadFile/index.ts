@@ -4,7 +4,7 @@ import { DownloadFilePromise } from '../types';
 /**
  * 下载文件
  *
- * 文档 http://uniapp.dcloud.io/api/request/network-file?id=downloadfile
+ * 文档 http://uniapp.dcloud.net.cn/api/request/network-file?id=downloadfile
  */
 export function downloadFile<T = UniApp.DownloadSuccessData>(
   urlOrOptions: string | UniApp.DownloadFileOption,

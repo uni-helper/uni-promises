@@ -7,6 +7,6 @@ import { promisify } from '../utils';
  *
  * 安卓 5.1 以上有效
  *
- * 文档 http://uniapp.dcloud.io/api/system/ble?id=setBLEMTU
+ * 文档 http://uniapp.dcloud.net.cn/api/system/ble?id=setBLEMTU
  */
 export const setBLEMTU = promisify(uni.setBLEMTU);

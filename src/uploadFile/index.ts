@@ -4,7 +4,7 @@ import { UploadFilePromise } from '../types';
 /**
  * 上传文件
  *
- * 文档 http://uniapp.dcloud.io/api/request/network-file?id=uploadfile
+ * 文档 http://uniapp.dcloud.net.cn/api/request/network-file?id=uploadfile
  */
 export function uploadFile<T = UniApp.UploadFileSuccessCallbackResult>(
   urlOrOptions: string | UniApp.UploadFileOption,

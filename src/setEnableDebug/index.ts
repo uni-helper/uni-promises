@@ -4,6 +4,6 @@ import { promisify } from '../utils';
  *
  * 此开关对正式版也能生效
  *
- * 文档 http://uniapp.dcloud.io/api/other/set-enable-debug?id=setenabledebug
+ * 文档 http://uniapp.dcloud.net.cn/api/other/set-enable-debug?id=setenabledebug
  */
 export const setEnableDebug = promisify(uni.setEnableDebug);

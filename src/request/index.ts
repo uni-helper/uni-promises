@@ -4,7 +4,7 @@ import { RequestPromise } from '../types';
 /**
  * 发起网络请求
  *
- * 文档 http://uniapp.dcloud.io/api/request/request?id=request
+ * 文档 http://uniapp.dcloud.net.cn/api/request/request?id=request
  */
 export function request<T = UniApp.RequestSuccessCallbackResult>(
   urlOrOptions: string | UniApp.RequestOptions,
