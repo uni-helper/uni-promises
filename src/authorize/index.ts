@@ -1,4 +1,4 @@
-import { promisify } from '../utils';
+import { promisify } from "../utils";
 
 /**
  * 提前向用户发起授权请求

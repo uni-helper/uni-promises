@@ -1,4 +1,4 @@
-import { promisify } from '../utils';
+import { promisify } from "../utils";
 
 /**
  * 移除 TabBar 某一项右上角的文本

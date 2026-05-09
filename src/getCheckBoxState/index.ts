@@ -1,4 +1,4 @@
-import { promisify } from '../utils';
+import { promisify } from "../utils";
 
 /**
  * 获取一键登录条款勾选框状态

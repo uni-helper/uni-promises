@@ -3,5 +3,8 @@
  *
  * 文档 http://uniapp.dcloud.net.cn/api/media/camera-context
  */
-export const createLivePusherContext = (livePusherId: string, componentInstance?: any) =>
-  uni.createLivePusherContext(livePusherId, componentInstance);
+export const createLivePusherContext = (
+  livePusherId: string,
+  // biome-ignore lint/suspicious/noExplicitAny: Work as expected.
+  componentInstance?: any
+) => uni.createLivePusherContext(livePusherId, componentInstance);

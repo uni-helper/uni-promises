@@ -1,4 +1,4 @@
-import { promisify } from '../utils';
+import { promisify } from "../utils";
 
 /**
  * 动态设置窗口的背景色

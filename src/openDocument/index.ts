@@ -1,4 +1,4 @@
-import { promisify } from '../utils';
+import { promisify } from "../utils";
 
 /**
  * 新开页面打开文档，支持格式 doc、xls、ppt、pdf、docx、xlsx、pptx

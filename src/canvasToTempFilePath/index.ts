@@ -1,4 +1,4 @@
-import { promisify } from '../utils';
+import { promisify } from "../utils";
 
 /**
  * 将当前画布指定区域的内容导出生成指定大小的图片

@@ -1,4 +1,4 @@
-import { promisify } from '../utils';
+import { promisify } from "../utils";
 
 /**
  * 拍摄视频或从手机相册中选视频，返回视频的临时文件路径。

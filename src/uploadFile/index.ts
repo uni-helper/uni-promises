@@ -1,5 +1,5 @@
-import { mountTaskMethodToPromise, noop } from '../utils';
-import { UploadFilePromise } from '../types';
+import type { UploadFilePromise } from "../types";
+import { mountTaskMethodToPromise, noop } from "../utils";
 
 /**
  * 上传文件
@@ -8,10 +8,10 @@ import { UploadFilePromise } from '../types';
  */
 export function uploadFile<T = UniApp.UploadFileSuccessCallbackResult>(
   urlOrOptions: string | UniApp.UploadFileOption,
-  options?: UniApp.UploadFileOption,
+  options?: UniApp.UploadFileOption
 ) {
   const _options =
-    typeof urlOrOptions === 'string'
+    typeof urlOrOptions === "string"
       ? { ...options, url: urlOrOptions, complete: options?.complete ?? noop }
       : {
           ...urlOrOptions,

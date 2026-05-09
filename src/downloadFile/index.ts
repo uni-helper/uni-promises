@@ -1,5 +1,5 @@
-import { mountTaskMethodToPromise, noop } from '../utils';
-import { DownloadFilePromise } from '../types';
+import type { DownloadFilePromise } from "../types";
+import { mountTaskMethodToPromise, noop } from "../utils";
 
 /**
  * 下载文件
@@ -8,10 +8,10 @@ import { DownloadFilePromise } from '../types';
  */
 export function downloadFile<T = UniApp.DownloadSuccessData>(
   urlOrOptions: string | UniApp.DownloadFileOption,
-  options?: UniApp.DownloadFileOption,
+  options?: UniApp.DownloadFileOption
 ) {
   const _options =
-    typeof urlOrOptions === 'string'
+    typeof urlOrOptions === "string"
       ? { ...options, url: urlOrOptions, complete: options?.complete ?? noop }
       : {
           ...urlOrOptions,

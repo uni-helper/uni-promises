@@ -1,8 +1,10 @@
-import { promisify } from '../utils';
+import { promisify } from "../utils";
 
 /**
  * 启用低功耗蓝牙设备特征值变化时的notify功能，订阅特征值
  *
  * 文档 http://uniapp.dcloud.net.cn/api/system/ble?id=notifyblecharacteristicvaluechange
  */
-export const notifyBLECharacteristicValueChange = promisify(uni.notifyBLECharacteristicValueChange);
+export const notifyBLECharacteristicValueChange = promisify(
+  uni.notifyBLECharacteristicValueChange
+);

@@ -1,41 +1,51 @@
-import { DownloadFilePromise, RequestPromise, UploadFilePromise } from './types';
+import type {
+  DownloadFilePromise,
+  RequestPromise,
+  UploadFilePromise,
+} from "./types";
 
+// biome-ignore lint/suspicious/noEmptyBlockStatements: Work as expected.
 export function noop() {}
 
+// biome-ignore lint/suspicious/noExplicitAny: Work as expected.
 export function promisify<F extends (...args: any) => void>(callback: F) {
   return (...args: Parameters<F>) => {
     type Options = Parameters<F>[0];
     const options = args[0] as Options;
-    return new Promise<Parameters<NonNullable<NonNullable<Options>['success']>>[0]>(
-      (resolve, reject) => {
-        callback({
-          ...options,
-          success: (result: any) => {
-            options?.success?.(result);
-            resolve(result);
-          },
-          fail: (error: any) => {
-            options?.fail?.(error);
-            reject(error);
-          },
-        });
-      },
-    );
+    return new Promise<
+      Parameters<NonNullable<NonNullable<Options>["success"]>>[0]
+    >((resolve, reject) => {
+      callback({
+        ...options,
+        // biome-ignore lint/suspicious/noExplicitAny: Work as expected.
+        success: (result: any) => {
+          options?.success?.(result);
+          resolve(result);
+        },
+        // biome-ignore lint/suspicious/noExplicitAny: Work as expected.
+        fail: (error: any) => {
+          options?.fail?.(error);
+          reject(error);
+        },
+      });
+    });
   };
 }
 
 export function mountTaskMethodToPromise<T = UniApp.GeneralCallbackResult>(
   task?: UniApp.RequestTask | UniApp.UploadTask | UniApp.DownloadTask,
-  promise?: RequestPromise<T> | DownloadFilePromise<T> | UploadFilePromise<T>,
+  promise?: RequestPromise<T> | DownloadFilePromise<T> | UploadFilePromise<T>
 ) {
-  if (!task || !promise) return;
+  if (!(task && promise)) {
+    return;
+  }
   for (const fn of [
-    'onHeadersReceived',
-    'offHeadersReceived',
-    'onChunkReceived',
-    'offChunkReceived',
-    'onProgressUpdate',
-    'offProgressUpdate',
+    "onHeadersReceived",
+    "offHeadersReceived",
+    "onChunkReceived",
+    "offChunkReceived",
+    "onProgressUpdate",
+    "offProgressUpdate",
   ] as const) {
     if (fn in task) {
       // @ts-expect-error no types

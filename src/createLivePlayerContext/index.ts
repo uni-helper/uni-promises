@@ -12,5 +12,8 @@
  * 文档
  * https://developers.weixin.qq.com/miniprogram/dev/api/media/live/wx.createLivePlayerContext.html
  */
-export const createLivePlayerContext = (livePlayerId: string, componentInstance?: any) =>
-  uni.createLivePlayerContext(livePlayerId, componentInstance);
+export const createLivePlayerContext = (
+  livePlayerId: string,
+  // biome-ignore lint/suspicious/noExplicitAny: Work as expected.
+  componentInstance?: any
+) => uni.createLivePlayerContext(livePlayerId, componentInstance);

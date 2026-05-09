@@ -1,4 +1,4 @@
-import { promisify } from '../utils';
+import { promisify } from "../utils";
 
 /**
  * 选择用户的发票抬头，需要用户授权 scope.invoiceTitle

@@ -43,47 +43,35 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
-    "check:deps": "taze -f",
-    "check:types": "tsc --noEmit",
-    "commit": "git-cz",
-    "dev": "unbuild --stub",
-    "lint": "conc \"pnpm:lint:eslint\" \"pnpm:lint:markdownlint\" \"pnpm:lint:publint\"",
-    "lint:eslint": "eslint ./src --fix --cache --ignore-path=.gitignore",
-    "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
-    "lint:publint": "publint",
+    "fix": "ultracite fix",
+    "prepare": "is-ci || lefthook install",
     "prepublishOnly": "pnpm run build",
-    "release": "pnpm install && pnpm run lint && bumpp",
-    "prepare": "is-ci || simple-git-hooks"
+    "publish": "conc \"npm:publish:vscode\" \"npm:publish:openvsx\"",
+    "publish:openvsx": "ovsx publish",
+    "publish:vscode": "vsce package && vsce publish",
+    "release": "bumpp"
   },
   "dependencies": {
     "@dcloudio/types": "^3.4.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.8.0",
-    "@commitlint/config-conventional": "^17.8.0",
-    "@commitlint/prompt": "^17.8.0",
-    "@modyqyw/fabric": "^9.0.3",
-    "@tsconfig/node18": "^18.2.2",
-    "@types/node": "^24.10.4",
-    "@typescript-eslint/eslint-plugin": "^6.8.0",
-    "@typescript-eslint/parser": "^6.8.0",
-    "bumpp": "^9.2.0",
-    "commitizen": "^4.3.0",
-    "concurrently": "^8.2.1",
-    "eslint": "^8.51.0",
-    "is-ci": "^3.0.1",
-    "lint-staged": "^15.0.1",
-    "markdownlint-cli": "^0.37.0",
-    "prettier": "^3.0.3",
-    "publint": "^0.2.4",
-    "simple-git-hooks": "^2.9.0",
-    "taze": "^0.11.4",
-    "ts-node": "^10.9.1",
-    "tsx": "^3.13.0",
-    "typescript": "^5.2.2",
-    "unbuild": "^2.0.0",
-    "vue": "^3.3.4"
+    "@biomejs/biome": "^2.4.14",
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
+    "@tsconfig/node24": "^24.0.4",
+    "@types/node": "^24.12.3",
+    "@vscode/vsce": "^3.9.1",
+    "bumpp": "^11.1.0",
+    "concurrently": "^9.2.1",
+    "is-ci": "^4.1.0",
+    "lefthook": "^2.1.6",
+    "ovsx": "^0.10.11",
+    "simple-git": "^3.36.0",
+    "tsdown": "^0.22.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "ultracite": "^7.6.4",
+    "vue": "~3.4.38"
   },
   "peerDependencies": {
     "typescript": "^4.8.0 || ^5.0.0",
@@ -94,7 +82,7 @@
       "optional": true
     }
   },
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@10.33.4",
   "engines": {
     "node": ">=14.18"
   },
