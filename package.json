@@ -43,6 +43,7 @@
     "dist"
   ],
   "scripts": {
+    "build": "tsdown",
     "fix": "ultracite fix",
     "prepare": "is-ci || lefthook install",
     "prepublishOnly": "pnpm run build",
