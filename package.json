@@ -38,7 +38,7 @@
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.mts",
   "files": [
     "dist"
   ],
@@ -47,9 +47,6 @@
     "fix": "ultracite fix",
     "prepare": "is-ci || lefthook install",
     "prepublishOnly": "pnpm run build",
-    "publish": "conc \"npm:publish:vscode\" \"npm:publish:openvsx\"",
-    "publish:openvsx": "ovsx publish",
-    "publish:vscode": "vsce package && vsce publish",
     "release": "bumpp"
   },
   "dependencies": {
