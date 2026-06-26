@@ -23,6 +23,7 @@ export * from "./closePreviewImage";
 export * from "./closeSocket";
 export * from "./compressImage";
 export * from "./compressVideo";
+export * from "./configMTLS";
 export * from "./connectSocket";
 export * from "./createBLEConnection";
 export * from "./createCameraContext";

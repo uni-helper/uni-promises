@@ -56,6 +56,7 @@ npm install @uni-helper/uni-promises
 - [closeSocket](./src/closeSocket/index.ts)
 - [compressImage](./src/compressImage/index.ts)
 - [compressVideo](./src/compressVideo/index.ts)
+- [configMTLS](./src/configMTLS/index.ts)
 - [connectSocket](./src/connectSocket/index.ts)
 - [createBLEConnection](./src/createBLEConnection/index.ts)
 - [createCameraContext](./src/createCameraContext/index.ts)
@@ -129,8 +130,10 @@ npm install @uni-helper/uni-promises
 - [removeStorage](./src/removeStorage/index.ts)
 - [removeTabBarBadge](./src/removeTabBarBadge/index.ts)
 - [request](./src/request/index.ts)
+- [requestMerchantTransfer](./src/requestMerchantTransfer/index.ts)
 - [requestPayment](./src/requestPayment/index.ts)
 - [requestSubscribeMessage](./src/requestSubscribeMessage/index.ts)
+- [requestVirtualPayment](./src/requestVirtualPayment/index.ts)
 - [saveFile](./src/saveFile/index.ts)
 - [saveImageToPhotosAlbum](./src/saveImageToPhotosAlbum/index.ts)
 - [saveVideoToPhotosAlbum](./src/saveVideoToPhotosAlbum/index.ts)
@@ -184,9 +187,13 @@ npm install @uni-helper/uni-promises
 
 ## 构建
 
-目前 `@uni-helper/uni-promises` 会使用 `unbuild` 将 `uni` API 之外的部分转译到 `ES2017`（即 `ES8`）。`uni` API 需要在项目构建时由 `uni-app` 官方提供的插件处理。
+目前 `@uni-helper/uni-promises` 会使用 [tsdown](https://github.com/rolldown/tsdown) 将 `uni` API 之外的部分转译到 `ES2017`（即 `ES8`）。`uni` API 需要在项目构建时由 `uni-app` 官方提供的插件处理。
 
 对于兼容性支持，请查看 <https://uni-helper.js.org/vitesse-uni-app/getting-started/deployment#%E5%85%BC%E5%AE%B9%E6%80%A7>。
+
+## 贡献
+
+欢迎参与贡献，请阅读 [贡献指南](./CONTRIBUTING.md)。
 
 ## 延伸
 
