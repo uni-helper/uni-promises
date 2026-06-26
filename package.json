@@ -47,7 +47,8 @@
     "fix": "ultracite fix",
     "prepare": "is-ci || lefthook install",
     "prepublishOnly": "pnpm run build",
-    "release": "bumpp"
+    "release": "bumpp",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@dcloudio/types": "^3.4.31"
@@ -57,12 +58,9 @@
     "@tsconfig/node24": "^24.0.4",
     "@types/node": "^24.13.2",
     "bumpp": "^11.1.0",
-    "concurrently": "^10.0.3",
     "is-ci": "^4.1.0",
     "lefthook": "^2.1.9",
-    "simple-git": "^3.36.0",
     "tsdown": "^0.22.3",
-    "tsx": "^4.22.4",
     "typescript": "^6.0.3",
     "ultracite": "^7.8.3",
     "vue": "~3.4.38"
