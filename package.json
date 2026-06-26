@@ -1,6 +1,6 @@
 {
   "name": "@uni-helper/uni-promises",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "uni-app Promise 化的 API",
   "keywords": [
     "uni-app",
