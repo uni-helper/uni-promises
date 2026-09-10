@@ -44,25 +44,23 @@
   ],
   "scripts": {
     "build": "tsdown",
+    "check": "ultracite check",
     "fix": "ultracite fix",
-    "prepare": "is-ci || lefthook install",
     "prepublishOnly": "pnpm run build",
     "release": "bumpp",
-    "type-check": "tsc --noEmit"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@dcloudio/types": "^3.4.31"
+    "@dcloudio/types": "^3.4.32"
   },
   "devDependencies": {
-    "@biomejs/biome": "~2.4.16",
-    "@tsconfig/node24": "^24.0.4",
-    "@types/node": "^24.13.2",
-    "bumpp": "^11.1.0",
-    "is-ci": "^4.1.0",
-    "lefthook": "^2.1.9",
-    "tsdown": "^0.22.3",
+    "@biomejs/biome": "^2.5.13",
+    "@tsconfig/node26": "^26.0.1",
+    "@types/node": "^26.5.0",
+    "bumpp": "^12.3.0",
+    "tsdown": "^0.23.0",
     "typescript": "^6.0.3",
-    "ultracite": "^7.8.3",
+    "ultracite": "^7.11.1",
     "vue": "~3.4.38"
   },
   "peerDependencies": {
@@ -74,9 +72,21 @@
       "optional": true
     }
   },
-  "packageManager": "pnpm@10.34.4",
+  "packageManager": "pnpm@12.3.4",
   "engines": {
     "node": ">=14.18"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "26",
+      "onFail": "warn"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.3.4",
+      "onFail": "warn"
+    }
   },
   "publishConfig": {
     "access": "public",
