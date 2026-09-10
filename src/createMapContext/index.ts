@@ -1,66 +1,74 @@
 import { promisify } from "../utils";
 
+/**
+ * 地图上下文。
+ *
+ * 官方类型里这些方法都是回调式，要写 `success` 才能拿到结果。这里把它们重新声明成返回 Promise 的方法，
+ * Promise 的值就是 `success` 回调的第一个入参，调用方式和其他 Promise 化的 API 一致。
+ *
+ * 官方类型里的 `on`、`$getAppMap` 没有重新声明，用法保持原样。
+ */
 export interface MapContext extends UniApp.MapContext {
   /** 添加个性化图层 */
-  addCustomLayer(
+  addCustomLayer: (
     options: UniApp.MapContextAddCustomLayerOptions
-  ): Promise<
+  ) => Promise<
     Parameters<
       NonNullable<UniApp.MapContextAddCustomLayerOptions["success"]>
     >[0]
   >;
   /** 创建自定义图片图层，图片会随着地图缩放而缩放 */
-  addGroundOverlay(
+  addGroundOverlay: (
     options: UniApp.MapContextAddGroundOverlayOptions
-  ): Promise<
+  ) => Promise<
     Parameters<
       NonNullable<UniApp.MapContextAddGroundOverlayOptions["success"]>
     >[0]
   >;
   /** 添加 marker */
-  addMarkers(
+  addMarkers: (
     options: UniApp.MapContextAddMarkersOptions
-  ): Promise<
+  ) => Promise<
     Parameters<NonNullable<UniApp.MapContextAddMarkersOptions["success"]>>[0]
   >;
   /** 获取屏幕上的点对应的经纬度，坐标原点为地图左上角 */
-  fromScreenLocation(
+  fromScreenLocation: (
     options: UniApp.MapContextFromScreenLocationOptions
-  ): Promise<
+  ) => Promise<
     Parameters<
       NonNullable<UniApp.MapContextFromScreenLocationOptions["success"]>
     >[0]
   >;
   /** 获取当前地图中心的经纬度，返回的是 gcj02 坐标系，可以用于 uni.openLocation */
-  getCenterLocation(
+  getCenterLocation: (
     options: UniApp.MapContextGetCenterLocationOptions
-  ): Promise<
+  ) => Promise<
     Parameters<
       NonNullable<UniApp.MapContextGetCenterLocationOptions["success"]>
     >[0]
   >;
   /** 获取当前地图的视野范围 */
-  getRegion(
+  getRegion: (
     options: UniApp.MapContextGetRegionOptions
-  ): Promise<
+  ) => Promise<
     Parameters<NonNullable<UniApp.MapContextGetRegionOptions["success"]>>[0]
   >;
   /** 获取当前地图的缩放级别 */
-  getScale(
+  getScale: (
     options: UniApp.MapContextGetScaleOptions
-  ): Promise<
+  ) => Promise<
     Parameters<NonNullable<UniApp.MapContextGetScaleOptions["success"]>>[0]
   >;
   /** 缩放视野展示所有经纬度 */
-  includePoints(
+  includePoints: (
     options: UniApp.MapContextIncludePointsOptions
-  ): Promise<
+  ) => Promise<
     Parameters<NonNullable<UniApp.MapContextIncludePointsOptions["success"]>>[0]
   >;
   /** 初始化点聚合的配置，未调用时采用默认配置 */
-  initMarkerCluster(
+  initMarkerCluster: (
     options: UniApp.MapContextInitMarkerClusterOptions
-  ): Promise<
+  ) => Promise<
     Parameters<
       NonNullable<UniApp.MapContextInitMarkerClusterOptions["success"]>
     >[0]
@@ -70,45 +78,45 @@ export interface MapContext extends UniApp.MapContext {
    *
    * 动画完成时触发回调事件，若动画进行中，对同一 marker 再次调用 moveAlong 方法，前一次的动画将被打断
    */
-  moveAlong(
+  moveAlong: (
     options: UniApp.MapContextMoveAlongOptions
-  ): Promise<
+  ) => Promise<
     Parameters<NonNullable<UniApp.MapContextMoveAlongOptions["success"]>>[0]
   >;
   /** 将地图中心移动到当前定位点，需要配合 map 组件的 show-location 使用 */
-  moveToLocation(
+  moveToLocation: (
     options: UniApp.MapContextMoveToLocationOptions
-  ): Promise<
+  ) => Promise<
     Parameters<
       NonNullable<UniApp.MapContextMoveToLocationOptions["success"]>
     >[0]
   >;
   /** 拉起地图 APP 选择导航 */
-  openMapApp(
+  openMapApp: (
     options: UniApp.MapContextOpenMapAppOptions
-  ): Promise<
+  ) => Promise<
     Parameters<NonNullable<UniApp.MapContextOpenMapAppOptions["success"]>>[0]
   >;
   /** 移除个性化图层 */
-  removeCustomLayer(
+  removeCustomLayer: (
     options: UniApp.MapContextRemoveCustomLayerOptions
-  ): Promise<
+  ) => Promise<
     Parameters<
       NonNullable<UniApp.MapContextRemoveCustomLayerOptions["success"]>
     >[0]
   >;
   /** 移除自定义图片图层 */
-  removeGroundOverlay(
+  removeGroundOverlay: (
     options: UniApp.MapContextRemoveGroundOverlayOptions
-  ): Promise<
+  ) => Promise<
     Parameters<
       NonNullable<UniApp.MapContextRemoveGroundOverlayOptions["success"]>
     >[0]
   >;
   /** 移除 marker */
-  removeMarkers(
+  removeMarkers: (
     options: UniApp.MapContextRemoveMarkersOptions
-  ): Promise<
+  ) => Promise<
     Parameters<NonNullable<UniApp.MapContextRemoveMarkersOptions["success"]>>[0]
   >;
   /**
@@ -116,43 +124,51 @@ export interface MapContext extends UniApp.MapContext {
    *
    * 默认偏移为[0.5, 0.5]
    */
-  setCenterOffset(
+  setCenterOffset: (
     options: UniApp.MapContextSetCenterOffsetOptions
-  ): Promise<
+  ) => Promise<
     Parameters<
       NonNullable<UniApp.MapContextSetCenterOffsetOptions["success"]>
     >[0]
   >;
   /** 获取经纬度对应的屏幕坐标，坐标原点为地图左上角 */
-  toScreenLocation(
+  toScreenLocation: (
     options: UniApp.MapContextToScreenLocationOptions
-  ): Promise<
+  ) => Promise<
     Parameters<
       NonNullable<UniApp.MapContextToScreenLocationOptions["success"]>
     >[0]
   >;
   /** 平移marker，带动画 */
-  translateMarker(
+  translateMarker: (
     options: UniApp.MapContextTranslateMarkerOptions
-  ): Promise<
+  ) => Promise<
     Parameters<
       NonNullable<UniApp.MapContextTranslateMarkerOptions["success"]>
     >[0]
   >;
   /** 更新自定义图片图层 */
-  updateGroundOverlay(
+  updateGroundOverlay: (
     options: UniApp.MapContextUpdateGroundOverlayOptions
-  ): Promise<
+  ) => Promise<
     Parameters<
       NonNullable<UniApp.MapContextUpdateGroundOverlayOptions["success"]>
     >[0]
   >;
 }
 
+/**
+ * 获取地图上下文
+ *
+ * 拿到上下文后，上面那些回调式方法都已经 Promise 化，可以直接 `await`。
+ *
+ * 文档 https://uniapp.dcloud.net.cn/api/location/map?id=createmapcontext
+ */
 // biome-ignore lint/suspicious/noExplicitAny: Work as expected.
 export const createMapContext = (mapId: string, componentInstance?: any) =>
   new Promise<MapContext>((resolve, reject) => {
     try {
+      // 拿到上下文后逐个替换方法。绑定 context 是因为去掉 bind 后，方法里的 this 会丢掉。
       // biome-ignore lint/suspicious/noExplicitAny: Work as expected.
       const context: any = uni.createMapContext(mapId, componentInstance);
       context.getCenterLocation = promisify(
