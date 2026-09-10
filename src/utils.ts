@@ -22,14 +22,14 @@ export function promisify<F extends (...args: any) => void>(callback: F) {
       callback({
         ...options,
         // biome-ignore lint/suspicious/noExplicitAny: Work as expected.
-        success: (result: any) => {
-          options?.success?.(result);
-          resolve(result);
-        },
-        // biome-ignore lint/suspicious/noExplicitAny: Work as expected.
         fail: (error: any) => {
           options?.fail?.(error);
           reject(error);
+        },
+        // biome-ignore lint/suspicious/noExplicitAny: Work as expected.
+        success: (result: any) => {
+          options?.success?.(result);
+          resolve(result);
         },
       });
     });

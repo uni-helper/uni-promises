@@ -12,7 +12,7 @@ export function request<T = UniApp.RequestSuccessCallbackResult>(
 ) {
   const _options =
     typeof urlOrOptions === "string"
-      ? { ...options, url: urlOrOptions, complete: options?.complete ?? noop }
+      ? { ...options, complete: options?.complete ?? noop, url: urlOrOptions }
       : {
           ...urlOrOptions,
           ...options,

@@ -12,7 +12,7 @@ export function uploadFile<T = UniApp.UploadFileSuccessCallbackResult>(
 ) {
   const _options =
     typeof urlOrOptions === "string"
-      ? { ...options, url: urlOrOptions, complete: options?.complete ?? noop }
+      ? { ...options, complete: options?.complete ?? noop, url: urlOrOptions }
       : {
           ...urlOrOptions,
           ...options,
