@@ -1,5 +1,13 @@
 # 改动日志
 
+## 0.5.0 (2026-09-10)
+
+- build: 升级工具链到 `@biomejs/biome` 2.5、`ultracite` 7.11、`tsdown` 0.23、`bumpp` 12、`@dcloudio/types` 3.4.32，开发环境改用 Node 26
+- build: 移除 `lefthook`、`is-ci` 和 `prepare` 脚本，不再安装 Git hooks；新增 `check` 脚本，`type-check` 改名 `typecheck`
+- ci: 新增 `ci.yml`，在 ubuntu、macos、windows 上分别用 Node 22、24、26 跑构建、检查、类型检查；发布流程改用 `pnpm/setup@v2`
+- fix: `MapContext` 的接口方法改为属性写法，满足 `useConsistentMethodSignatures`
+- docs: README 补上用法小节，CONTRIBUTING 按当前工具链重写
+
 ## 0.4.0 (2026-06-26)
 
 - feat: 新增 API

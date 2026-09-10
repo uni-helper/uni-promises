@@ -30,6 +30,40 @@ npm install @uni-helper/uni-promises
 
 不考虑支持 `uni_modules`。
 
+## 使用
+
+调用方式和原生 `uni` API 一样，只是把 `success`、`fail` 回调换成了 `await`。
+
+```ts
+import { request } from "@uni-helper/uni-promises";
+
+const { data } = await request({ url: "https://example.com" });
+```
+
+`request`、`uploadFile`、`downloadFile` 返回的 Promise 上还挂着原生 task 的方法，可以在 `await` 之外订阅响应头、分块数据和上传下载进度，也可以用 `promise.abort()` 取消任务。
+
+```ts
+import { request } from "@uni-helper/uni-promises";
+
+const promise = request({ url: "https://example.com" });
+
+promise.onChunkReceived(({ data }) => {
+  // data 是分块收到的 ArrayBuffer
+});
+
+await promise;
+```
+
+`createMapContext`、`getApp` 这类 API 本身返回 Promise，解析出来的对象上的回调式方法也已经 Promise 化。
+
+```ts
+import { createMapContext } from "@uni-helper/uni-promises";
+
+const context = await createMapContext("map");
+
+const { longitude, latitude } = await context.getCenterLocation({});
+```
+
 ## API
 
 - [addPhoneContact](./src/addPhoneContact/index.ts)
