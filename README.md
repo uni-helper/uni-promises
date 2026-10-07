@@ -1,12 +1,24 @@
+<a href="https://github.com/uni-helper/uni-promises"><img src="https://cdn.jsdelivr.net/gh/uni-helper/uni-promises@main/banner.svg" alt="banner" width="100%"/></a>
+
 # @uni-helper/uni-promises
 
-[![License](https://img.shields.io/github/license/uni-helper/uni-promises)](https://github.com/uni-helper/uni-promises/blob/main/LICENSE)
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/uni-helper/uni-promises@main/logo.svg" alt="logo" width="256" height="256" />
+</p>
 
-[![npm](https://img.shields.io/npm/v/@uni-helper/uni-promises)](https://www.npmjs.com/package/@uni-helper/uni-promises)
-
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/uni-helper/uni-promises)
+<p align="center">
+  <a href="https://github.com/uni-helper/uni-promises/blob/main/LICENSE"><img src="https://img.shields.io/github/license/uni-helper/uni-promises?style=for-the-badge&labelColor=005947&color=eee" alt="License"></a>
+  <a href="https://github.com/uni-helper/uni-promises/stargazers"><img src="https://img.shields.io/github/stars/uni-helper/uni-promises?style=for-the-badge&labelColor=005947&color=eee" alt="GitHub Stars"></a>
+  <a href="https://npmx.dev/package/@uni-helper/uni-promises"><img src="https://img.shields.io/npm/v/@uni-helper/uni-promises?style=for-the-badge&labelColor=005947&color=eee" alt="NPM version"></a>
+  <a href="https://npmx.dev/package/@uni-helper/uni-promises"><img src="https://img.shields.io/npm/dm/@uni-helper/uni-promises?style=for-the-badge&labelColor=005947&color=eee" alt="npm downloads"></a>
+</p>
+<p align="center">
+  <a href="https://github.com/ModyQyW"><img src="https://img.shields.io/badge/Author%20%26%20Maintainer-ModyQyW-blue?style=for-the-badge" alt="Author & Maintainer"></a>
+</p>
 
 `uni-app` promise 化的 API。要求 `node >= 14.18`。
+
+不想看文档？直接问 AI 🤖 <a href="https://deepwiki.com/uni-helper/uni-promises"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
 
 ## 起步
 
@@ -17,16 +29,6 @@
 ```shell
 npm install @uni-helper/uni-promises
 ```
-
-<details>
-  <summary>yarn v2/v3</summary>
-  <p>请参考 <a href="https://yarnpkg.com/configuration/yarnrc/#nodeLinker">文档</a> 设置 <code>nodeLinker</code> 为 <code>node_modules</code>。</p>
-</details>
-
-<details>
-  <summary>pnpm</summary>
-  <p>请参考 <a href="https://pnpm.io/npmrc#shamefully-hoist">文档</a> 设置 <code>shamefully-hoist</code> 为 <code>true</code>。</p>
-</details>
 
 不考虑支持 `uni_modules`。
 
@@ -105,12 +107,12 @@ const { longitude, latitude } = await context.getCenterLocation({});
 - [createVideoContext](./src/createVideoContext/index.ts)
 - [downloadFile](./src/downloadFile/index.ts)
 - [getApp](./src/getApp/index.ts)
+- [getBackgroundAudioManager](./src/getBackgroundAudioManager/index.ts)
+- [getBatteryInfo](./src/getBatteryInfo/index.ts)
+- [getBeacons](./src/getBeacons/index.ts)
 - [getBLEDeviceCharacteristics](./src/getBLEDeviceCharacteristics/index.ts)
 - [getBLEDeviceRSSI](./src/getBLEDeviceRSSI/index.ts)
 - [getBLEDeviceServices](./src/getBLEDeviceServices/index.ts)
-- [getBackgroundAudioManager](./src/getBackgroundAudioManager/index.ts)
-- [getBeacons](./src/getBeacons/index.ts)
-- [getBatteryInfo](./src/getBatteryInfo/index.ts)
 - [getBluetoothAdapterState](./src/getBluetoothAdapterState/index.ts)
 - [getBluetoothDevices](./src/getBluetoothDevices/index.ts)
 - [getCheckBoxState](./src/getCheckBoxState/index.ts)
@@ -157,9 +159,9 @@ const { longitude, latitude } = await context.getCenterLocation({});
 - [pageScrollTo](./src/pageScrollTo/index.ts)
 - [preLogin](./src/preLogin/index.ts)
 - [previewImage](./src/previewImage/index.ts)
-- [reLaunch](./src/reLaunch/index.ts)
 - [readBLECharacteristicValue](./src/readBLECharacteristicValue/index.ts)
 - [redirectTo](./src/redirectTo/index.ts)
+- [reLaunch](./src/reLaunch/index.ts)
 - [removeSavedFile](./src/removeSavedFile/index.ts)
 - [removeStorage](./src/removeStorage/index.ts)
 - [removeTabBarBadge](./src/removeTabBarBadge/index.ts)
@@ -173,9 +175,9 @@ const { longitude, latitude } = await context.getCenterLocation({});
 - [saveVideoToPhotosAlbum](./src/saveVideoToPhotosAlbum/index.ts)
 - [scanCode](./src/scanCode/index.ts)
 - [sendSocketMessage](./src/sendSocketMessage/index.ts)
-- [setBLEMTU](./src/setBLEMTU/index.ts)
 - [setBackgroundColor](./src/setBackgroundColor/index.ts)
 - [setBackgroundTextStyle](./src/setBackgroundTextStyle/index.ts)
+- [setBLEMTU](./src/setBLEMTU/index.ts)
 - [setClipboardData](./src/setClipboardData/index.ts)
 - [setEnableDebug](./src/setEnableDebug/index.ts)
 - [setKeepScreenOn](./src/setKeepScreenOn/index.ts)
@@ -240,3 +242,7 @@ const { longitude, latitude } = await context.getCenterLocation({});
 ## 致谢
 
 - [taro](https://github.com/nervjs/taro)
+
+## 许可证
+
+[MIT](https://github.com/uni-helper/uni-promises/blob/main/LICENSE)

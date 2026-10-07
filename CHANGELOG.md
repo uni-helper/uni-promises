@@ -1,5 +1,15 @@
 # 改动日志
 
+## 0.5.1 (2026-10-07)
+
+- fix: 补充导出 `openSetting`、`requestMerchantTransfer`、`requestVirtualPayment`
+- fix: 移除模板遗留的 `vue ^3.2.0` peer 依赖
+- build: 升级 pnpm 12.9.1、ultracite 7.12.4、biome 2.5.15、@types/node 26.6.4，移除用不到的 vue 开发依赖
+- ci: `pnpm/setup` 从 v2 升到 v3
+- build: biome 配置跳过 SVG
+- docs: README 新增 banner 和 logo，更新 badge，补充许可证，移除 yarn PnP 与 pnpm hoist 提示
+- docs: 新增 AGENTS.md
+
 ## 0.5.0 (2026-09-10)
 
 - build: 升级工具链到 `@biomejs/biome` 2.5、`ultracite` 7.11、`tsdown` 0.23、`bumpp` 12、`@dcloudio/types` 3.4.32，开发环境改用 Node 26

@@ -9,7 +9,7 @@
 | 依赖 | 版本 |
 | --- | --- |
 | Node.js | 开发用 `26`（[.node-version](./.node-version)，`package.json#devEngines` 同样写死 `26`）。发布出去的包只要求 `>=14.18`（`package.json#engines`） |
-| 包管理器 | `pnpm@12.3.4`（通过 `packageManager` 字段固定，启用 Corepack 后使用，不要混用 npm/yarn） |
+| 包管理器 | `pnpm@12.9.1`（通过 `packageManager` 字段固定，启用 Corepack 后使用，不要混用 npm/yarn） |
 | Git | 行尾统一为 LF（见 [.editorconfig](./.editorconfig)） |
 
 版本对不上时 `devEngines` 只会打印警告，不会拦住安装，所以别指望它帮你发现用错了 Node 版本。
@@ -114,7 +114,7 @@ export const <apiName> = promisify(uni.<apiName>);
 <type>(<scope>): <subject>
 ```
 
-常用 `type`：`feat`（新功能 / 新增 API 封装）、`fix`（修复）、`docs`（文档）、`refactor`、`perf`、`build`、`ci`、`chore`。`subject` 用祈使句，结尾不加句号。示例：
+常用 `type`：`feat`（新功能 / 新增 API 封装）、`fix`（修复）、`docs`（文档）、`style`（格式，不改逻辑）、`refactor`、`perf`、`build`、`ci`、`chore`。`subject` 用祈使句，结尾不加句号。示例：
 
 ```text
 feat: 新增 configMTLS 封装
