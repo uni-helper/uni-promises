@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.5.2 (2026-10-08)
+
+- chore: 更新 logo
+
 ## 0.5.1 (2026-10-07)
 
 - fix: 补充导出 `openSetting`、`requestMerchantTransfer`、`requestVirtualPayment`
