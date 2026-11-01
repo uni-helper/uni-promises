@@ -9,7 +9,7 @@
 | 依赖 | 版本 |
 | --- | --- |
 | Node.js | 开发用 `26`（[.node-version](./.node-version)，`package.json#devEngines` 同样写死 `26`）。发布出去的包只要求 `>=14.18`（`package.json#engines`） |
-| 包管理器 | `pnpm@12.9.1`（通过 `packageManager` 字段固定，启用 Corepack 后使用，不要混用 npm/yarn） |
+| 包管理器 | `pnpm@12.16.1`（通过 `packageManager` 字段固定，启用 Corepack 后使用，不要混用 npm/yarn） |
 | Git | 行尾统一为 LF（见 [.editorconfig](./.editorconfig)） |
 
 版本对不上时 `devEngines` 只会打印警告，不会拦住安装，所以别指望它帮你发现用错了 Node 版本。
@@ -86,6 +86,10 @@ export const <apiName> = promisify(uni.<apiName>);
 1. 在 `src/index.ts` 按**字母序**追加 `export * from "./<apiName>";`。
 2. 在 `README.md` 的 API 列表里按字母序补一行 `- [<apiName>](./src/<apiName>/index.ts)`。
 3. 文档链接统一使用 `https://`（官方对 `http://` 做 301 跳转）。
+
+不需要封装的 API 分两类。一类本来就不走 `success` 回调：同步方法、`on*` / `off*` 事件监听、`createAnimation`、`getUniverifyManager`、`rpx2px`。另一类在 `@dcloudio/types` 里没有 options 对象：`hideToast`、`hideLoading`、`stopPullDownRefresh`、`hideKeyboard`、`closeAuthView` 的签名都是 `(): void`，`promisify` 推不出返回类型，等上游类型补上 options 再考虑。
+
+逐个核对官方文档、补缺失 API 时，按仓库里的 [`.agents/skills/bump-apis`](./.agents/skills/bump-apis/SKILL.md) 走。
 
 ### task 类 API 的例外
 

@@ -221,6 +221,8 @@ const { longitude, latitude } = await context.getCenterLocation({});
 - [vibrateShort](./src/vibrateShort/index.ts)
 - [writeBLECharacteristicValue](./src/writeBLECharacteristicValue/index.ts)
 
+这些没有封装：不走 `success` 回调的 API（同步方法、`on*` / `off*` 事件监听、`createAnimation` 这类返回实例对象的方法），以及 `hideToast`、`hideLoading`、`stopPullDownRefresh`、`hideKeyboard`、`closeAuthView`。后五个官方类型里没有 options 对象，推不出返回值，直接调用 `uni.*` 就行。
+
 ## 构建
 
 目前 `@uni-helper/uni-promises` 会使用 [tsdown](https://github.com/rolldown/tsdown) 将 `uni` API 之外的部分转译到 `ES2017`（即 `ES8`）。`uni` API 需要在项目构建时由 `uni-app` 官方提供的插件处理。

@@ -7,7 +7,7 @@
 - 语言:TypeScript(`strict: true`),`tsconfig.json` 继承 `@tsconfig/node26`,类型检查按 ESNext,`types` 只开 `@dcloudio/types` 和 `node`,模块解析 `Bundler`。
 - 构建:tsdown 输出 ESM + CJS + dts 到 `dist/`,运行时代码转译到 `es2017`;`uni.*` 是运行时全局(由用户项目里的 uni-app 编译插件处理),不在打包范围。`files: ["dist"]`,`exports` 只有 `.`。
 - Node:开发用 `26`(`.node-version` 与 `devEngines.runtime` 一致,`onFail: warn` 只警告不拦截);发布包 `engines.node` 是 `>=14.18`,两者用途不同,别混改。
-- 包管理器:pnpm `12.9.1`(`packageManager` + `devEngines.packageManager`),经 Corepack 启用,不要用 npm/yarn 装依赖。
+- 包管理器:pnpm `12.16.1`(`packageManager` + `devEngines.packageManager`),经 Corepack 启用,不要用 npm/yarn 装依赖。
 - 依赖:唯一 dependencies 是 `@dcloudio/types`(类型来源);peerDependencies 只有 `typescript`(optional)。src 和 dist 的运行时、类型都不引用 vue,对 Vue 2 和 Vue 3 项目都可用,不要加回 vue peer。
 - 无测试框架、无 Git hooks、无 `prepare` 脚本;质量闸门是 build + check + typecheck,CI(`.github/workflows/ci.yml`)在 ubuntu/macos/windows × Node 22/24/26 矩阵上跑这三条。
 
@@ -37,9 +37,11 @@ pnpm release      # bumpp 交互式选版本打 tag;推 tag 触发 release.yml(�
 
 - **task 类**(`src/request`、`src/uploadFile`、`src/downloadFile`):原生返回带 `onProgressUpdate` / `onHeadersReceived` / `onChunkReceived` / `abort` 的 task,单纯 promisify 会丢。手写 `new Promise`,重写 `success` / `fail` 时保留调用方传入的回调,`complete` 用 `noop` 兜底,再 `mountTaskMethodToPromise` 把 task 方法绑到 Promise 上;返回类型用 `src/types.ts` 里对应的 Promise 类型。
 - **上下文类**(`src/createMapContext`):用 `new Promise` 包 `uni.createMapContext`,把上下文上每个回调式方法逐个 `promisify(x.bind(context))` 替换——不 bind 会丢 `this`;接口里这些方法重声明为属性写法,返回 `Promise<Parameters<NonNullable<Options["success"]>>[0]>`。
-- **`src/getApp`**:同步全局函数,拿不到 App 实例会直接抛错;内部改名 `_getApp` 避免遮蔽全局,`try/catch` 把错误转成 reject。
+- **`src/getApp`**:同步全局函数,拿不到 App 实例会直接抛错;内部改名 `_getApp` 避免遮蔽全局,原样透传 `{ allowDefault: true }` 这类 options,`try/catch` 把错误转成 reject。
 
 不变量:一个 API 必须三处同步——`src/<apiName>/` 目录、`src/index.ts` 按字母序追加 `export * from`、`README.md` API 列表按字母序补链接。dist 由 `src/index.ts` 生成,漏掉 export 的 API 包里根本不存在,README 列了它会直接误导用户。
+
+官方索引表里有一部分没封装,不是漏项。一类是本来就不走 `success` 回调的:同步方法、`on*` / `off*` 事件监听、`createAnimation`、`getUniverifyManager`、`rpx2px`。另一类是 `@dcloudio/types@3.4.32` 里签名只有 `(): void` 的 `hideToast`、`hideLoading`、`stopPullDownRefresh`、`hideKeyboard`、`closeAuthView`,它们没有 options 对象,`promisify` 推不出返回类型。核对流程见 `.agents/skills/bump-apis`。
 
 ## Conventions
 
