@@ -1,6 +1,6 @@
 {
   "name": "@uni-helper/uni-promises",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "uni-app Promise 化的 API",
   "keywords": [
     "uni-app",
@@ -47,7 +47,7 @@
     "check": "ultracite check",
     "fix": "ultracite fix",
     "prepublishOnly": "pnpm run build",
-    "release": "bumpp",
+    "release": "bumpp --all",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
