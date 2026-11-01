@@ -1,7 +1,7 @@
 import { promisify } from "../utils";
 
 /**
- * 登录
+ * 检查登录状态是否过期
  *
  * 文档 https://uniapp.dcloud.net.cn/api/plugins/login?id=unichecksession
  */

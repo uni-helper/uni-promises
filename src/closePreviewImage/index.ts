@@ -1,7 +1,7 @@
 import { promisify } from "../utils";
 
 /**
- * 预览图片
+ * 关闭预览图片
  *
  * 文档 https://uniapp.dcloud.net.cn/api/media/image?id=closepreviewimage
  */

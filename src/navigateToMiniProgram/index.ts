@@ -1,7 +1,7 @@
 import { promisify } from "../utils";
 
 /**
- * 调起客户端小程序设置界面，返回用户设置的操作结果
+ * 打开另一个小程序
  *
  * 文档 https://uniapp.dcloud.net.cn/api/other/open-miniprogram?id=navigatetominiprogram
  */
